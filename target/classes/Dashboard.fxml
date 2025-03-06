@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="859.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardController">
+
+    <children>
+        <!-- ✅ Image de fond de la fenêtre principale -->
+        <ImageView fitHeight="711.0" fitWidth="962.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../JAVA3A19/PidevJava-Mouheb-User/logo.jpg" />
+            </image>
+        </ImageView>
+
+        <!-- ✅ Barre supérieure avec boutons et contrôles (ajouter utilisateur, recherche, tri, statistiques, déconnexion) -->
+        <HBox layoutX="29.0" layoutY="14.0" spacing="10">
+            <children>
+                <!-- ✅ Bouton pour ajouter un utilisateur -->
+                <Button mnemonicParsing="false" onAction="#ouvrirAjouterUtilisateur" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" text="Ajouter Utilisateur" />
+
+                <!-- ✅ Champ de recherche par nom -->
+                <TextField fx:id="searchField" onKeyReleased="#rechercherParNom" prefWidth="200.0" promptText="Rechercher par nom..." />
+
+                <!-- ✅ ComboBox pour trier les utilisateurs par date -->
+                <ComboBox fx:id="comboTriDate" onAction="#trierParDate" prefHeight="31.0" prefWidth="217.0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Sélectionner le tri" />
+                            <String fx:value="Plus ancien → Plus récent" />
+                            <String fx:value="Plus récent → Plus ancien" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+
+                <!-- ✅ Bouton pour afficher les statistiques -->
+                <Button mnemonicParsing="false" onAction="#afficherStatistiques" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold;" text="Afficher Statistiques" />
+
+                <!-- ✅ Bouton pour la déconnexion -->
+                <Button mnemonicParsing="false" onAction="#handleLogout" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" text="Déconnexion" />
+            </children>
+        </HBox>
+
+        <!-- ✅ Tableau contenant la liste des utilisateurs -->
+        <VBox layoutX="29.0" layoutY="58.0" maxHeight="Infinity" maxWidth="Infinity">
+            <children>
+                <!-- ✅ En-tête de la liste des utilisateurs (lignes de titre) -->
+                <HBox prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: #D3D3D3;">
+                    <children>
+                        <Label prefHeight="40.0" prefWidth="100.0" style="-fx-font-weight: bold; -fx-font-size: 16;" text="Nom" />
+                        <Label prefHeight="40.0" prefWidth="100.0" style="-fx-font-weight: bold; -fx-font-size: 16;" text="Prénom" />
+                        <Label prefHeight="40.0" prefWidth="150.0" style="-fx-font-weight: bold; -fx-font-size: 16;" text="Email" />
+                        <Label prefHeight="40.0" prefWidth="150.0" style="-fx-font-weight: bold; -fx-font-size: 16;" text="Type Utilisateur" />
+                        <Label prefHeight="40.0" prefWidth="150.0" style="-fx-font-weight: bold; -fx-font-size: 16;" text="Date Inscription" />
+                        <Label prefHeight="40.0" prefWidth="150.0" style="-fx-font-weight: bold; -fx-font-size: 16;" text="Téléphone" /> <!-- Nouvelle colonne pour le téléphone -->
+                        <Label prefHeight="40.0" prefWidth="150.0" style="-fx-font-weight: bold; -fx-font-size: 16;" text="Actions" />
+                    </children>
+                </HBox>
+
+                <!-- ✅ Contenu de la liste des utilisateurs -->
+                <ScrollPane fx:id="scroll" opacity="0.8" prefHeight="566.0" prefWidth="885.0">
+                    <content>
+                        <GridPane fx:id="grid" prefHeight="10.0" prefWidth="800.0" />
+                    </content>
+                </ScrollPane>
+            </children>
+        </VBox>
+
+    </children>
+</AnchorPane>

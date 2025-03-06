@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.SignUpController">
+    <children>
+        <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../JAVA3A19/PidevJava-Mouheb-User/Signup.jpg" />
+            </image>
+        </ImageView>
+        <VBox layoutX="250.0" layoutY="229.0" spacing="15.0">
+            <children>
+                <TextField fx:id="TFnom" prefWidth="300.0" promptText="Nom" />
+                <TextField fx:id="TFprenom" prefWidth="300.0" promptText="Prénom" />
+                <TextField fx:id="TFemail" prefWidth="300.0" promptText="Email" />
+                <PasswordField fx:id="TFmotDePasse" prefWidth="300.0" promptText="Mot de passe" />
+                <TextField fx:id="TFtelephone" prefWidth="300.0" promptText="Téléphone" />  <!-- Ajout du champ Téléphone -->
+
+                <Label text="Type d'utilisateur" style="-fx-font-weight: bold;" />
+                <HBox spacing="10">
+                    <children>
+                        <RadioButton fx:id="rbFreelance" text="Freelance"/>
+                        <RadioButton fx:id="rbFormateur" text="Formateur"/>
+                        <RadioButton fx:id="rbEmployeur" text="Employeur"/>
+                    </children>
+                </HBox>
+
+                <Button onAction="#signUpAction" prefWidth="300.0" text="S'inscrire" />
+                <Hyperlink onAction="#goToSignIn" text="Déjà un compte ? Se connecter" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

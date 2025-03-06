@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignInController">
+    <children>
+        <!-- Image de fond -->
+        <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../JAVA3A19/PidevJava-Mouheb-User/SignIn.jpg"/>
+            </image>
+        </ImageView>
+
+        <!-- Conteneur des champs et boutons -->
+        <VBox layoutX="250.0" layoutY="236.0" spacing="15.0">
+            <children>
+                <!-- Champ Email -->
+                <TextField fx:id="TFemail" prefWidth="300.0" promptText="Email" />
+
+                <!-- Champ Mot de passe -->
+                <PasswordField fx:id="TFmotDePasse" prefWidth="300.0" promptText="Mot de passe" />
+
+                <!-- Bouton Se connecter -->
+                <Button onAction="#signInAction" prefWidth="300.0" text="Se connecter" />
+
+                <!-- Lien Mot de passe oublié -->
+                <Hyperlink text="Mot de passe oublié?" onAction="#forgotPasswordAction" />
+
+                <!-- Lien Créer un compte -->
+                <Hyperlink text="Créer un compte" onAction="#signUpAction" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

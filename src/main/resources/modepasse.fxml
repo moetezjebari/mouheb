@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PasswordRecoveryController">
+    <children>
+        <!-- Image de fond -->
+        <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../JAVA3A19/PidevJava-Mouheb-User/mdp.jpg"/>
+            </image>
+        </ImageView>
+
+        <!-- Conteneur des champs et boutons -->
+        <VBox layoutX="250.0" layoutY="236.0" spacing="15.0">
+            <children>
+                <!-- Champ Téléphone -->
+                <TextField fx:id="TFphone" prefWidth="300.0" promptText="Téléphone" />
+
+                <!-- Bouton Envoyer le code par téléphone -->
+                <Button onAction="#sendCodeByPhone" prefWidth="300.0" text="Send Code by Phone" />
+
+                <!-- Lien Retour à la page de connexion -->
+                <Hyperlink text="Back to Sign In" onAction="#backToSignInAction" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="500.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.AjouterUserController">
+
+    <children>
+        <VBox layoutX="50.0" layoutY="40.0" spacing="10.0">
+            <children>
+                <Label text="Ajouter un Utilisateur" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+
+                <TextField fx:id="TFnom" prefWidth="300.0" promptText="Nom"/>
+                <TextField fx:id="TFprenom" prefWidth="300.0" promptText="Prénom"/>
+                <TextField fx:id="TFemail" prefWidth="300.0" promptText="Email"/>
+                <PasswordField fx:id="TFmotDePasse" prefWidth="300.0" promptText="Mot de passe"/>
+
+                <!-- Ajout du champ pour le téléphone -->
+                <TextField fx:id="TFtelephone" prefWidth="300.0" promptText="Téléphone"/>
+
+                <Label text="Type d'utilisateur:" style="-fx-font-weight: bold;"/>
+                <HBox spacing="10">
+                    <children>
+                        <RadioButton fx:id="rbFreelance" text="Freelance"/>
+                        <RadioButton fx:id="rbFormateur" text="Formateur"/>
+                        <RadioButton fx:id="rbEmployeur" text="Employeur"/>
+                        <RadioButton fx:id="rbAdmin" text="Admin"/>
+                    </children>
+                </HBox>
+
+                <HBox spacing="10">
+                    <children>
+                        <Button onAction="#ajouterUtilisateur" text="Ajouter" style="-fx-background-color: green; -fx-text-fill: white;"/>
+                        <Button onAction="#fermerFenetre" text="Annuler" style="-fx-background-color: red; -fx-text-fill: white;"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

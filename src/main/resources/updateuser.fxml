@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="594.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.UpdateUserController">
+    <children>
+        <!-- Image de fond -->
+        <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../JAVA3A19/PidevJava-Mouheb-User/update.png" />
+            </image>
+        </ImageView>
+
+        <!-- Conteneur des champs et boutons -->
+        <VBox layoutX="250.0" layoutY="200.0" spacing="15.0">
+            <children>
+                <!-- Champ Nom -->
+                <TextField fx:id="TFnom" prefWidth="300.0" promptText="Nom" />
+
+                <!-- Champ Prénom -->
+                <TextField fx:id="TFprenom" prefWidth="300.0" promptText="Prénom" />
+
+                <!-- Champ Email -->
+                <TextField fx:id="TFemail" prefWidth="300.0" promptText="Email" />
+
+                <!-- Champ Téléphone -->
+                <TextField fx:id="TFtelephone" prefWidth="300.0" promptText="Téléphone" />  <!-- Ajout du champ téléphone -->
+
+                <!-- Groupe de CheckBox pour Type d'utilisateur -->
+                <Label text="Type d'utilisateur :" />
+                <HBox spacing="10">
+                    <CheckBox fx:id="chkFreelance" text="Freelance" />
+                    <CheckBox fx:id="chkFormateur" text="Formateur" />
+                    <CheckBox fx:id="chkEmployeur" text="Employeur" />
+                    <CheckBox fx:id="chkAdmin" text="Admin" />
+                </HBox>
+
+                <!-- Bouton Enregistrer -->
+                <Button onAction="#updateUserAction" prefWidth="300.0" text="Enregistrer" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
